@@ -1,6 +1,7 @@
 "use client";
 
 import Image, { StaticImageData } from "next/image";
+import CountUp from "../animations/CountUp";
 
 interface ServiceCard {
   title: string;
@@ -85,14 +86,83 @@ export default function WhatWeBuild() {
             <ServiceCard key={service.title} {...service} />
           ))}
         </div>
-        <div className=" justify-center mt-10">
-          <div className="flex justify-center">
-            <span className="mt-5 text-lg text-black font-bold">
-              We Done Over
+        {/* Stats Section */}
+        <div className="mt-16 sm:mt-20">
+          <div className="text-center mb-10">
+            <span className="inline-block px-4 py-1.5 bg-[#212C6B]/10 rounded-full text-sm font-semibold text-[#212C6B] uppercase tracking-wider">
+              Our Achievements
             </span>
+            <h3 className="mt-4 text-2xl sm:text-3xl font-bold text-zinc-900">
+              We&apos;ve Done Over
+            </h3>
           </div>
-          <div className="mt-10 border p-20 border-amber-300">
+          
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8">
+            {/* Roads */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#212C6B] to-[#3a4a9f]" />
+              <div className="absolute -right-8 -top-8 w-24 h-24 bg-[#212C6B]/5 rounded-full transition-transform duration-300 group-hover:scale-150" />
+              <div className="relative">
+          <div className="flex items-baseline justify-center">
+            <CountUp
+              from={0}
+              to={30}
+              separator=","
+              direction="up"
+              duration={2}
+              className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-[#212C6B] to-[#3a4a9f] bg-clip-text text-transparent"
+              startWhen={true}
+            />
+            <span className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-[#212C6B] to-[#3a4a9f] bg-clip-text text-transparent">+</span>
+          </div>
+          <span className="mt-4 block text-center text-lg font-semibold text-zinc-700">Roads Built</span>
+          <p className="mt-2 text-center text-sm text-zinc-500">Connecting communities</p>
+              </div>
+            </div>
             
+            {/* Metal Loads Crushed */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#3a4a9f] to-[#212C6B]" />
+              <div className="absolute -right-8 -top-8 w-24 h-24 bg-[#212C6B]/5 rounded-full transition-transform duration-300 group-hover:scale-150" />
+              <div className="relative">
+          <div className="flex items-baseline justify-center">
+            <CountUp
+              from={1000}
+              to={9490}
+              separator=","
+              direction="up"
+              duration={2}
+              className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-[#212C6B] to-[#3a4a9f] bg-clip-text text-transparent"
+              startWhen={true}
+            />
+            <span className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-[#212C6B] to-[#3a4a9f] bg-clip-text text-transparent">+</span>
+          </div>
+          <span className="mt-4 block text-center text-lg font-semibold text-zinc-700">Metal Loads Crushed</span>
+          <p className="mt-2 text-center text-sm text-zinc-500">Premium materials processed</p>
+              </div>
+            </div>
+            
+            {/* Projects */}
+            <div className="group relative bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-[#212C6B] to-[#3a4a9f]" />
+              <div className="absolute -right-8 -top-8 w-24 h-24 bg-[#212C6B]/5 rounded-full transition-transform duration-300 group-hover:scale-150" />
+              <div className="relative">
+          <div className="flex items-baseline justify-center">
+            <CountUp
+              from={0}
+              to={350}
+              separator=","
+              direction="up"
+              duration={2}
+              className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-[#212C6B] to-[#3a4a9f] bg-clip-text text-transparent"
+              startWhen={true}
+            />
+            <span className="text-5xl lg:text-6xl font-extrabold bg-gradient-to-r from-[#212C6B] to-[#3a4a9f] bg-clip-text text-transparent">+</span>
+          </div>
+          <span className="mt-4 block text-center text-lg font-semibold text-zinc-700">Projects Completed</span>
+          <p className="mt-2 text-center text-sm text-zinc-500">Delivered with excellence</p>
+              </div>
+            </div>
           </div>
         </div>
       </div>

@@ -10,3 +10,4 @@ export { default as Header } from "./header/Header";
 
 // Services components
 export { default as WhatWeBuild } from "./services/WhatWeBuild";
+export { default as RoadsShowcase } from "./services/RoadsShowcase";
