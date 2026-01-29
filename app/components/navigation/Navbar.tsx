@@ -6,7 +6,7 @@ import Image from "next/image";
 import NavLink from "./NavLink";
 import MobileMenuButton from "./MobileMenuButton";
 import { NAV_ITEMS } from "./types";
-import QueensLogo from "@/app/assests/queens_logo.png";
+import QueensLogo from "@/app/queens_logo.png";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -20,28 +20,35 @@ export default function Navbar() {
   }, []);
 
   return (
-    <nav 
-      className="sticky top-0 z-50 w-full border-b border-zinc-200 bg-white/80 backdrop-blur-md dark:border-zinc-800 dark:bg-zinc-900/80"
+    <nav
+      className="sticky top-0 z-50 w-full bg-white"
       role="navigation"
       aria-label="Main navigation"
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6 lg:px-8 bg-white ">
         <div className="flex h-16 items-center justify-between">
           {/* Logo */}
-          <div className="flex-shrink-0">
-            <Link 
-              href="/" 
-              className="flex items-center gap-2 text-xl font-bold text-zinc-900 transition-opacity hover:opacity-80 dark:text-white"
+          <div className="shrink-0">
+            <Link
+              href="/"
+              className="flex items-center gap-2 text-xl font-bold text-black transition-opacity hover:opacity-80"
               aria-label="Queens - Go to homepage"
             >
-                <Image 
-                src={QueensLogo} 
-                alt="Queens Logo" 
+              <Image
+                src={QueensLogo}
+                alt="Queens Logo"
                 width={32}
                 height={32}
-                className="h-8 w-8" 
-                />
-              <span>Queens</span>
+                className="h-12 w-12"
+              />
+                <div className="flex flex-col leading-none text-black font-['Jomolhari']">
+                <span className="text-[1.5rem] font-thin leading-none">
+                  Queens
+                </span>
+                <span className="text-[0.85rem] font-thin leading-none -mt-0.5">
+                  constructions
+                </span>
+                </div>
             </Link>
           </div>
 
@@ -57,17 +64,17 @@ export default function Navbar() {
           {/* Desktop CTA Button */}
           <div className="hidden md:flex md:items-center">
             <Link
-              href="/get-started"
-              className="rounded-full bg-zinc-900 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
+              href="/contact"
+              className="rounded-[5px] bg-[#212C6B] px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-[#1a2356]"
             >
-              Get Started
+              Contact Us
             </Link>
           </div>
 
           {/* Mobile Menu Button */}
-          <MobileMenuButton 
-            isOpen={isMobileMenuOpen} 
-            onClick={toggleMobileMenu} 
+          <MobileMenuButton
+            isOpen={isMobileMenuOpen}
+            onClick={toggleMobileMenu}
           />
         </div>
       </div>
@@ -85,19 +92,19 @@ export default function Navbar() {
               key={item.href}
               href={item.href}
               onClick={closeMobileMenu}
-              className="block rounded-md px-3 py-2 text-base font-medium text-zinc-600 hover:bg-zinc-100 hover:text-zinc-900 dark:text-zinc-400 dark:hover:bg-zinc-800 dark:hover:text-white"
+              className="block rounded-md px-3 py-2 text-base font-medium text-black"
               role="menuitem"
             >
               {item.label}
             </Link>
           ))}
           <Link
-            href="/get-started"
+            href="/contact"
             onClick={closeMobileMenu}
-            className="mt-2 block rounded-full bg-zinc-900 px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-zinc-700 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
+            className="mt-2 block rounded-[5px] bg-[#212C6B] px-4 py-2 text-center text-sm font-medium text-white transition-colors hover:bg-[#1a2356]"
             role="menuitem"
           >
-            Get Started
+            Contact Us
           </Link>
         </div>
       </div>
