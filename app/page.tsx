@@ -1,4 +1,4 @@
-import { Header, WhatWeBuild } from "./components";
+import { Header, WhatWeBuild, RoadsShowcase } from "./components";
 
 export default function Home() {
   return (
@@ -14,6 +14,9 @@ export default function Home() {
 
       {/* What We Build Section */}
       <WhatWeBuild />
+
+      {/* Roads Showcase Section */}
+      <RoadsShowcase />
       
     </>
   );
