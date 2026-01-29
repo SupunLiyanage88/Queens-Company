@@ -7,3 +7,6 @@ export type { NavItem } from "./navigation/types";
 
 // Header components
 export { default as Header } from "./header/Header";
+
+// Services components
+export { default as WhatWeBuild } from "./services/WhatWeBuild";
